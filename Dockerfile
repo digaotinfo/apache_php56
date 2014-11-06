@@ -16,7 +16,7 @@ rm -rf /var/www/* && \
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini && \
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
 chmod 755 /*.sh && \
-mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html && \
+mkdir -p /app && rm -fr /var/www && ln -s /app /var/www && \
 a2enmod php5 rewrite 
 
 # Add application code onbuild
